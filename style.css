@@ -25,3 +25,28 @@
 .music-player iframe{display:block;width:100%;height:152px;max-height:none;border:0;border-radius:12px}
 .music-player p{font-size:.8rem;margin:0 0 8px}
 @media(max-width:480px){.music-player{width:min(280px,calc(100vw - 28px))}}
+
+/* A little enchanted birthday cake */
+.cake-scene{position:relative;width:min(310px,78vw);height:220px;margin:26px auto 20px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;filter:drop-shadow(0 15px 18px #9e45602b)}
+.cake-plate{width:100%;height:17px;border-radius:50%;background:linear-gradient(180deg,#fff,#e8c4d0);border:2px solid #f4dce4;box-shadow:0 5px 0 #dba9bb}
+.cake-tier{position:relative;display:flex;align-items:center;justify-content:space-around;border:2px solid #f3c3d2;background:linear-gradient(180deg,#fff8fa,#f8c9d8);box-shadow:inset 0 -8px 0 #edb0c4}
+.tier-one{width:88%;height:64px;border-radius:14px 14px 12px 12px;margin-bottom:0;color:#c23a6a;font-size:1.3rem}
+.tier-one:before{content:"";position:absolute;left:-2px;right:-2px;top:-9px;height:19px;border-radius:50%;background:#fff8fa;border:2px solid #f3c3d2}
+.tier-two{width:65%;height:49px;border-radius:13px 13px 8px 8px;margin-bottom:-1px;background:linear-gradient(180deg,#fff,#f4b8cb)}
+.cake-top{width:65%;height:14px;border-radius:50%;background:#fff8fa;border:2px solid #f3c3d2;margin-bottom:-7px;z-index:2}
+.candles{height:58px;display:flex;align-items:flex-end;justify-content:center;gap:27px;margin-bottom:-2px;z-index:3}
+.candle{position:relative;width:10px;height:45px;border-radius:4px 4px 2px 2px;background:repeating-linear-gradient(135deg,#fff 0 5px,#d96b91 5px 9px);box-shadow:0 2px 5px #9e456044}
+.flame{position:absolute;left:50%;top:-20px;width:13px;height:19px;transform:translateX(-50%);border-radius:60% 40% 55% 45%;background:radial-gradient(ellipse at 50% 68%,#fff8b8 0 20%,#ffc64b 42%,#ff874d 72%,transparent 74%);filter:drop-shadow(0 0 8px #ffb84d);animation:flameDance .8s ease-in-out infinite alternate}
+.spell-cast .flame{animation:blowOut .65s ease-out forwards}
+.spell-cast .candle{filter:brightness(.96)}
+.sparkle{position:absolute;color:#d69a35;font-size:1.6rem;animation:twinkle 1.6s ease-in-out infinite alternate}
+.s1{left:8%;top:46px}.s2{right:8%;top:76px;animation-delay:.5s}.s3{left:20%;top:5px;animation-delay:.9s}
+.spell-cast .sparkle{animation:spellSpark 1s ease-out infinite}
+.magic-hint{font-family:'Playfair Display',serif;font-style:italic;color:#b45a79}
+.wand-button{position:relative;overflow:hidden}
+.wand-button:disabled{opacity:.94;cursor:default}
+@keyframes flameDance{from{transform:translateX(-50%) rotate(-7deg) scale(.94)}to{transform:translateX(-50%) rotate(7deg) scale(1.08)}}
+@keyframes blowOut{0%{opacity:1;transform:translateX(-50%) scale(1)}45%{opacity:.7;transform:translate(-50%,-12px) scale(.65)}100%{opacity:0;transform:translate(-50%,-25px) scale(.1)}}
+@keyframes twinkle{from{opacity:.35;transform:scale(.7) rotate(-15deg)}to{opacity:1;transform:scale(1.2) rotate(18deg)}}
+@keyframes spellSpark{0%{opacity:0;transform:scale(.2) rotate(0)}50%{opacity:1;transform:scale(1.5) rotate(90deg)}100%{opacity:0;transform:scale(.2) rotate(180deg)}}
+@media(max-width:480px){.cake-scene{height:195px;width:min(285px,78vw)}.candles{height:51px}.candle{height:40px}}
