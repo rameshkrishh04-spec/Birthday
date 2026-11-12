@@ -6,3 +6,5 @@
 .music-player p{font-size:.78rem;margin:0 0 6px}
 .music-player a{font-size:.78rem;margin-top:4px}
 @media(max-width:480px){.music-player{width:min(190px,calc(100vw - 28px));}.music-player iframe{max-height:107px}}
+
+.music-wrap .music{display:inline-block;text-decoration:none}
