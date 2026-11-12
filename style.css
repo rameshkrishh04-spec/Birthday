@@ -50,3 +50,35 @@
 @keyframes twinkle{from{opacity:.35;transform:scale(.7) rotate(-15deg)}to{opacity:1;transform:scale(1.2) rotate(18deg)}}
 @keyframes spellSpark{0%{opacity:0;transform:scale(.2) rotate(0)}50%{opacity:1;transform:scale(1.5) rotate(90deg)}100%{opacity:0;transform:scale(.2) rotate(180deg)}}
 @media(max-width:480px){.cake-scene{height:195px;width:min(285px,78vw)}.candles{height:51px}.candle{height:40px}}
+
+/* Interactive dark-room birthday magic finale */
+.magic-page{position:fixed!important;inset:0;z-index:20;width:100%;height:100dvh;min-height:100dvh!important;padding:0!important;margin:0;display:none!important;background:#080714;overflow:hidden;animation:none!important}
+.magic-page.active{display:block!important}.magic-stage{position:relative;width:100%;height:100%;min-height:100dvh;overflow:hidden;background:radial-gradient(ellipse at 50% 65%,#19152c 0,#090815 58%,#03030a 100%);color:#fff;text-align:center;transition:background 1.5s}
+.dark-stars{position:absolute;top:10%;left:0;width:100%;color:#9e8ad5;letter-spacing:10px;opacity:.65;font-size:18px;animation:starPulse 2s infinite alternate}
+.magic-intro{position:absolute;top:14%;left:8%;right:8%;font-family:'Playfair Display',serif;font-size:clamp(1.1rem,4vw,1.55rem);color:#f8dbe8;text-shadow:0 0 18px #c17aff;line-height:1.5}
+.magic-wand{position:absolute;left:50%;bottom:20%;transform:translateX(-50%);border:1px solid #d9b7ff66;background:#251b3e;color:white;border-radius:50%;width:76px;height:76px;font-size:2.6rem;box-shadow:0 0 22px #bd8bff88,0 0 60px #8959c955;touch-action:none;z-index:5;cursor:grab}
+.magic-wand.picked{transform:translate(-50%,-50%);cursor:grabbing;box-shadow:0 0 28px #fff,0 0 70px #c89cff}
+.wand-instruction{position:absolute;bottom:9%;left:8%;right:8%;font-size:.85rem;color:#c9b9df}
+.hidden-cake{position:absolute;left:50%;top:53%;width:min(290px,76vw);height:175px;transform:translate(-50%,-50%) scale(.55);opacity:0;filter:drop-shadow(0 0 25px #ffb7df);transition:opacity .8s,transform .8s;pointer-events:none}
+.hidden-cake.discovered{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.magic-cake-plate{position:absolute;bottom:0;width:100%;height:14px;border-radius:50%;background:linear-gradient(#fff,#dcaabd);box-shadow:0 5px 0 #9d6684}
+.magic-cake-tier{position:absolute;left:8%;width:84%;height:58px;border:2px solid #ffd1e2;background:linear-gradient(#fff5fa,#f6a9ca);border-radius:12px;color:#c13f79;font-size:1.1rem;display:grid;place-items:center;box-shadow:inset 0 -8px #e88db5}
+.magic-cake-tier.upper{bottom:65px;left:22%;width:56%;height:43px;background:linear-gradient(#fff,#f8c4dc)}
+.magic-cake-tier.lower{bottom:14px}.magic-cake-top{position:absolute;bottom:101px;left:22%;width:56%;height:13px;border-radius:50%;background:#fff7fb;border:2px solid #ffd1e2;z-index:2}
+.cake-candles{position:absolute;z-index:3;left:0;right:0;bottom:140px;display:flex;justify-content:center;gap:28px}
+.cake-candles i{display:block;width:9px;height:35px;border-radius:4px;background:repeating-linear-gradient(135deg,#fff 0 5px,#e66b9c 5px 9px);position:relative}
+.cake-candles i:after{content:"";position:absolute;left:1px;top:-16px;width:8px;height:13px;border-radius:60% 40%;background:radial-gradient(#fff8bf,#ffb33e 65%,#ff7654);opacity:0;filter:drop-shadow(0 0 9px #ffc45c)}
+.hidden-cake.lit .cake-candles i:after{opacity:1;animation:flameDance .7s infinite alternate}
+.light-candles{position:absolute;z-index:6;left:50%;top:76%;transform:translateX(-50%);white-space:nowrap;background:linear-gradient(110deg,#9c1745,#d84270);color:#fff;border:0;border-radius:99px;padding:14px 24px;font-weight:700;box-shadow:0 0 24px #ff9bc9}
+.magic-stage.lit-up{background:radial-gradient(ellipse at 50% 45%,#ffe7f1 0,#f5b9d0 48%,#d85c91 100%);color:#761333}
+.magic-stage.lit-up .magic-intro,.magic-stage.lit-up .dark-stars,.magic-stage.lit-up .wand-instruction{display:none}
+.magic-stage.lit-up .hidden-cake{top:31%;opacity:1;transform:translate(-50%,-50%) scale(.9)}
+.grand-reveal{position:absolute;left:5%;right:5%;bottom:5%;animation:fade 1.3s both}
+.grand-reveal h1{font-size:clamp(2rem,7vw,3.6rem);margin:6px 0;color:#761333}
+.grand-reveal h1 em{color:#c12f6c}.grand-reveal p{color:#813d5c;margin:7px auto;line-height:1.5}
+.grand-reveal .reveal-kicker{letter-spacing:.22em;font-size:.72rem;font-weight:bold;color:#a51f50}
+.grand-reveal .final-love{font-family:'Playfair Display',serif;font-size:1.1rem;color:#a51f50}
+.grand-reveal small{color:#8f4962}.magic-confetti{position:absolute;z-index:10;top:-40px;pointer-events:none;animation:confettiFall var(--duration) linear forwards}
+@keyframes starPulse{to{opacity:1;text-shadow:0 0 18px #d6b7ff}}
+@keyframes confettiFall{to{transform:translate(var(--drift),110vh) rotate(800deg);opacity:0}}
+@media(max-height:700px){.magic-intro{top:7%}.magic-stage.lit-up .hidden-cake{top:26%;transform:translate(-50%,-50%) scale(.75)}.grand-reveal{bottom:2%}.grand-reveal h1{font-size:2rem}.grand-reveal p{font-size:.85rem}}
