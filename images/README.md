@@ -1,0 +1,1 @@
+Birthday photo gallery assets. Keep memory-1.jpg through memory-10.jpg in this folder.
