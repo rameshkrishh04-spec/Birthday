@@ -19,3 +19,9 @@
 .photos figure{overflow:hidden;border-radius:18px;box-shadow:0 10px 28px #76213b18}
 .photos img{transition:transform .45s ease}
 .photos figure:active img{transform:scale(1.025)}
+
+/* Spotify Lover player: compact and never wider than a phone screen */
+.music-player{width:min(300px,calc(100vw - 28px));max-height:none;overflow:visible;padding:10px}
+.music-player iframe{display:block;width:100%;height:152px;max-height:none;border:0;border-radius:12px}
+.music-player p{font-size:.8rem;margin:0 0 8px}
+@media(max-width:480px){.music-player{width:min(280px,calc(100vw - 28px))}}
